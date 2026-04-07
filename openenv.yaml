@@ -1,0 +1,60 @@
+name: email-triage-env
+version: "1.0.0"
+description: >
+  A real-world OpenEnv environment where an AI agent triages emails by
+  classifying priority, extracting action items, and suggesting responses.
+  Simulates a corporate inbox assistant.
+
+author: hackathon-participant
+license: MIT
+
+api:
+  base_path: /
+  endpoints:
+    - path: /reset
+      method: POST
+      description: Reset the environment and load a new task
+    - path: /step
+      method: POST
+      description: Submit an action and receive a reward
+    - path: /state
+      method: GET
+      description: Get the current environment state (email + task)
+    - path: /health
+      method: GET
+      description: Health check
+
+tasks:
+  - id: priority_classification
+    difficulty: easy
+    description: Classify the email priority as low / medium / high / urgent
+    score_range: [0.0, 1.0]
+
+  - id: action_extraction
+    difficulty: medium
+    description: Extract all required action items from the email
+    score_range: [0.0, 1.0]
+
+  - id: full_triage
+    difficulty: hard
+    description: >
+      Full triage: classify priority, extract actions, identify sender intent,
+      and suggest a response strategy
+    score_range: [0.0, 1.0]
+
+reward:
+  type: continuous
+  range: [0.0, 1.0]
+  partial_credit: true
+  description: >
+    Scores are computed by an LLM-based grader using a rubric.
+    Partial credit is awarded for partially correct answers.
+
+environment:
+  variables:
+    - name: API_BASE_URL
+      description: Base URL of the LLM API (OpenAI-compatible)
+    - name: MODEL_NAME
+      description: Model identifier for inference
+    - name: HF_TOKEN
+      description: Hugging Face token (used in deployment)
