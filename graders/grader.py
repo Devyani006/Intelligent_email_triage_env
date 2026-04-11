@@ -10,17 +10,18 @@ from openai import OpenAI
 
 logger = logging.getLogger(__name__)
 
-client = OpenAI(
-    api_key=os.environ.get("HF_TOKEN", ""),
-    base_url=os.environ.get("API_BASE_URL", "https://api.openai.com/v1"),
-)
-MODEL = os.environ.get("MODEL_NAME", "gpt-4o-mini")
+def _get_client():
+    return OpenAI(
+        api_key=os.environ.get("HF_TOKEN", ""),
+        base_url=os.environ.get("API_BASE_URL", "https://api.openai.com/v1"),
+    )
 
+MODEL = os.environ.get("MODEL_NAME", "gpt-4o-mini")
 
 def _call_grader_llm(prompt: str) -> dict:
     """Call LLM and parse JSON score response."""
     try:
-        response = client.chat.completions.create(
+        response = _get_client().chat.completions.create(
             model=MODEL,
             messages=[
                 {
