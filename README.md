@@ -1,3 +1,11 @@
+---
+title: EmailTriage
+emoji: 📧
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
 # Email Triage OpenEnv
 
 A real-world **OpenEnv** environment for the OpenEnv × Scaler Hackathon.
@@ -132,3 +140,16 @@ docker run -p 7860:7860 \
 | Easy | 1.0 exact, 0.5 adjacent level, 0.0 wrong |
 | Medium | LLM semantic match: `matched / total` expected actions |
 | Hard | Weighted: 25% priority + 35% actions + 25% intent + 15% escalate |
+=======
+---
+title: EmailTriage
+emoji: 🌖
+colorFrom: indigo
+colorTo: yellow
+sdk: docker
+pinned: false
+license: mit
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+>>>>>>> ea1497510b51598c77b8b73330985fe5dbf0a730
