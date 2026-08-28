@@ -133,14 +133,5 @@ docker run -p 7860:7860 \
 | Medium | LLM semantic match: `matched / total` expected actions |
 | Hard | Weighted: 25% priority + 35% actions + 25% intent + 15% escalate |
 =======
----
-title: EmailTriage
-emoji: 🌖
-colorFrom: indigo
-colorTo: yellow
-sdk: docker
-pinned: false
-license: mit
----
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
