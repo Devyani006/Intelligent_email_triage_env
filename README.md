@@ -1,4 +1,4 @@
-# Email Triage OpenEnv
+# Intelligent Email Triage OpenEnv
 
 A real-world **OpenEnv** environment for the OpenEnv × Scaler Hackathon.
 
