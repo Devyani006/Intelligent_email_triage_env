@@ -1,11 +1,3 @@
----
-title: EmailTriage
-emoji: 📧
-colorFrom: blue
-colorTo: green
-sdk: docker
-pinned: false
----
 # Email Triage OpenEnv
 
 A real-world **OpenEnv** environment for the OpenEnv × Scaler Hackathon.
